@@ -1,19 +1,35 @@
 import React from 'react';
 import AvatarIcon from '../assets/avatarIcon.svg';
 import TwitterIcon from '../assets/twitterIcon.svg';
-// border border-1 border-black inline-block py-8 px-5 shadow shadow-lg
+import styled from 'styled-components';
+
+const NameHeading = styled.p`
+	font-weight: 600;
+	line-height: 40px;
+`;
+const UserName = styled.p`
+	font-size: 16px;
+	color: #7a869f;
+`;
+const FollowerHeading = styled.p`
+	color: #7a869f;
+`;
+const FollowerCount = styled.p`
+	font-weight: 400;
+`;
+
 const InfoCard = ({ classStyle, numberStyle, style, nameStyle }) => {
 	return (
 		<div className={`${classStyle} m-5 py-8 px-7 rounded-lg`}>
 			<img src={AvatarIcon} width={50} className="mb-4" />
-			<p className={`${nameStyle} font-bold leading-9`}>Johnny’s Cash</p>
+			<NameHeading className={`${nameStyle}`}>Johnny’s Cash</NameHeading>
 			<div className="flex items-center gap-2">
 				<img src={TwitterIcon} width={18} />
-				<p className="text-[#7A869F] text-base">@degenjohndoe</p>
+				<UserName>@degenjohndoe</UserName>
 			</div>
 			<div className={`flex items-center gap-2 mt-5 ${style}`}>
-				<p className={`font-semibold ${numberStyle}`}>545</p>
-				<p className="text-[#7A869F]">Followers</p>
+				<FollowerCount className={`${numberStyle}`}>545</FollowerCount>
+				<FollowerHeading>Followers</FollowerHeading>
 			</div>
 		</div>
 	);
